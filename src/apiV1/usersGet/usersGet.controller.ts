@@ -1,7 +1,5 @@
-import * as bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
-import * as jwt from 'jwt-then';
-import config from '../../config/config';
+
 const UsersGet = require('./usersGet.model');
 
 export default class UserController {
@@ -15,7 +13,6 @@ export default class UserController {
           data: null
         });
       }
-
       res.status(200).send({
         success: true,
         data: usersGet

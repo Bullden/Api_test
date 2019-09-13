@@ -1,9 +1,6 @@
-import * as bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
-import * as jwt from 'jwt-then';
-import config from '../../config/config';
+
 const UsersGet = require('./usersGet.model.ts');
-import Role from '../usersInRoles/usersInRoles.model';
 
 export default class BookController {
 
@@ -25,10 +22,7 @@ export default class BookController {
         res.status(200).send({
           success: true,
           message: 'Token generated Successfully',
-          data: token,
-          // id: user._id,
-          // name: user.name,
-        
+          data: token
         });
         console.log('tokenBook:',token)
       } catch (err) {

@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import * as jwt from 'jwt-then';
 import config from '../../config/config';
 const User = require('../users/user.model.ts');
-import Role from '../usersInRoles/usersInRoles.model';
+
 
 
 export default class UserController {

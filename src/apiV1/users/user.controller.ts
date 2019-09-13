@@ -1,9 +1,6 @@
-import * as bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
-import * as jwt from 'jwt-then';
-import config from '../../config/config';
-const User = require('./user.model');
 
+const User = require('./user.model');
 export default class UserController {
   public findAll = async (req: Request, res: Response): Promise<any> => {
     try {
@@ -15,7 +12,6 @@ export default class UserController {
           data: null
         });
       }
-
       res.status(200).send({
         success: true,
         data: users
@@ -28,7 +24,6 @@ export default class UserController {
       });
     }
   };
-
   public findOne = async (req: Request, res: Response): Promise<any> => {
     try {
       const user = await User.findById(req.params.id, { password: 0 });
@@ -39,7 +34,6 @@ export default class UserController {
           data: null
         });
       }
-
       res.status(200).send({
         success: true,
         data: user
@@ -54,7 +48,7 @@ export default class UserController {
   };
 
   public update = async (req: Request, res: Response): Promise<any> => {
-    const { name} = req.body;
+    const { name, email} = req.body;
     console.log(req.body)
     console.log(req.params.id)
     try {
@@ -63,6 +57,7 @@ export default class UserController {
         {
           $set: {
             name,
+            email
           }
         },
         { new: true }

@@ -8,10 +8,6 @@ const UserSchema = mongoose.Schema(
       required: true,
       trim: true
     },
-    // lastName: {
-    //   type: String,
-    //   required: true
-    // },
     email: {
       type: String,
       unique: true,
@@ -19,7 +15,9 @@ const UserSchema = mongoose.Schema(
       required: true,
       trim: true
     },
+    
     _id : Schema.Types.ObjectId,
+
     password: {
       type: String,
       required: true,

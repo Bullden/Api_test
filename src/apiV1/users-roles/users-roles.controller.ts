@@ -1,7 +1,4 @@
-import * as bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
-import * as jwt from 'jwt-then';
-import config from '../../config/config';
 import UserRole from './users-roles.model';
 
 export default class UserController {

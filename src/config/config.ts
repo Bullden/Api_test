@@ -3,7 +3,7 @@ dotenv.config();
 console.log('HELLLLOOOOOOO')
 export default {
   APP: process.env.APP || "development",
-  PORT: process.env.PORT || "3000",
+  PORT: process.env.PORT || "3210",
   
   DB_DIALECT: process.env.DB_DIALECT || "mongo",
   DB_HOST:
@@ -18,12 +18,3 @@ export default {
   JWT_EXPIRATION: process.env.JWT_EXPIRATION || "1h",
   SALT_ROUNDS: process.env.SALT_ROUNDS || 10
 };
-
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://denis:6apDeJIbu3I0M@cluster0-ljxwx.mongodb.net/test?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
